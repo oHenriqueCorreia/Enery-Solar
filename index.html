@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SolarEnergy | Energia que Impulsiona Negócios</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-home">
+  <header class="navbar" id="site-navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo-branca.png" alt="Solar Energy" />
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="sobre.html">Sobre a Empresa</a>
+        <a href="solucoes.html">Soluções</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="contato.html">Contato</a>
+        <a href="contato.html" class="btn btn-primary nav-cta">Orçamento</a>
+      </nav>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <video class="hero-bg-video" autoplay muted loop playsinline poster="assets/imagem-01.jpg">
+        <source src="assets/video-home.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeo embutido.
+      </video>
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-bottom-shadow"></div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">A ENERGIA QUE IMPULSIONA NEGÓCIOS E CIDADES.</h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="credibility bg-card">
+      <div class="container">
+        <div class="credibility-grid">
+          <div class="credibility-stats">
+            <div class="stat-item">
+              <h2 class="stat-number" data-value="780">0+</h2>
+              <p class="stat-label">Projetos Executados</p>
+            </div>
+            <div class="stat-item">
+              <h2 class="stat-number" data-value="2018">2000</h2>
+              <p class="stat-label">Desde</p>
+            </div>
+          </div>
+          <div class="credibility-image-wrapper">
+            <img src="assets/imagem-01.jpg" alt="Liderança" class="credibility-image" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="calculator bg-card">
+      <div class="container">
+        <div class="section-header text-center mx-auto">
+          <span class="section-subtitle">Calculadora de ROI</span>
+          <h2 class="section-title">Calcule seu ROI</h2>
+          <p class="section-description">Simule sua economia e entenda o retorno do seu investimento em energia solar.</p>
+        </div>
+        <div class="calc-container">
+          <div class="calc-input-area">
+            <h3>Qual o valor médio da sua conta de luz?</h3>
+            <div class="slider-wrapper">
+              <input type="range" min="500" max="50000" step="500" value="2500" id="billRange" class="calc-slider">
+            </div>
+            <div class="calc-bill-value">R$ <span id="billValue">2.500</span><span>/mês</span></div>
+          </div>
+          <div class="calc-results">
+            <div class="result-card">
+              <p>Economia Mensal</p>
+              <h4>R$ <span id="monthlySavings">2375</span></h4>
+            </div>
+            <div class="result-card">
+              <p>Payback Estimado</p>
+              <h4><span id="paybackYears">4.2</span> Anos</h4>
+            </div>
+            <div class="result-card highlight">
+              <p>Economia em 20 Anos</p>
+              <h4>R$ <span id="twentyYearSavings">57.000</span></h4>
+            </div>
+          </div>
+          <div class="calc-cta text-center mt-md">
+            <a href="contato.html" class="btn btn-primary">RECEBER ESTUDO DETALHADO</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="partners bg-darker">
+      <div class="container">
+        <p class="partners-title">PARCEIROS ESTRATÉGICOS DE TECNOLOGIA</p>
+        <div class="partners-list">
+          <span class="partner-logo">WEG</span>
+          <span class="partner-logo">BYD</span>
+          <span class="partner-logo">Fronius</span>
+          <span class="partner-logo">Sungrow</span>
+          <span class="partner-logo">Intelbras</span>
+          <span class="partner-logo">CanadianSolar</span>
+          <span class="partner-logo">Jinko</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="assets/logo-branca.png" alt="Solar Energy"></a>
+        <p class="footer-desc">Engenharia energética inteligente para quem busca independência, eficiência e crescimento sustentável.</p>
+        <div class="social-icons" style="margin-top: 2.5rem; display: flex; gap: 10px;">
+          <a href="#" style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; background:rgba(255,255,255,0.05); border-radius:50%; text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path></svg></a>
+          <a href="#" style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; background:rgba(255,255,255,0.05); border-radius:50%; text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path></svg></a>
+          <a href="#" style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; background:rgba(255,255,255,0.05); border-radius:50%; text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path></svg></a>
+        </div>
+      </div>
+      <div class="footer-links"><h4 class="footer-title">Navegação</h4><ul><li><a href="index.html">Home</a></li><li><a href="sobre.html">Sobre a Empresa</a></li><li><a href="solucoes.html">Soluções</a></li><li><a href="projetos.html">Portfólio</a></li></ul></div>
+      <div class="footer-links"><h4 class="footer-title">Soluções</h4><ul><li><a href="solucoes.html">Energia Solar</a></li><li><a href="solucoes.html">Agronegócio</a></li><li><a href="solucoes.html">Mobilidade Elétrica</a></li><li><a href="solucoes.html">Armazenamento</a></li></ul></div>
+      <div class="footer-contact"><h4 class="footer-title">Contato</h4><ul><li>📍 ERMO - SANTA CATARINA - BRASIL<br><strong>Atuação: SC e RS</strong></li><li>📞 48 99963-2201</li><li>✉️ contato@solarenergy.com.br</li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 SolarEnergy Engenharia. Todos os direitos reservados.</p></div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+
