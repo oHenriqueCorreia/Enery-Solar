@@ -213,10 +213,10 @@ section {
 }
 
 /* Home Page Nav Text Color Before Scroll */
-body.page-home .navbar:not(.scrolled) .nav-links a:not(.btn) { color: #fff; }
+body.page-home .navbar:not(.scrolled) .nav-links a:not(.btn) { color: #fff !important; }
 body.page-home .navbar:not(.scrolled) .nav-links a:not(.btn):hover,
-body.page-home .navbar:not(.scrolled) .nav-links a.active:not(.btn) { color: var(--color-primary); }
-body.page-home .navbar:not(.scrolled) .mobile-toggle { color: #fff; }
+body.page-home .navbar:not(.scrolled) .nav-links a.active:not(.btn) { color: var(--color-primary) !important; }
+body.page-home .navbar:not(.scrolled) .mobile-toggle { color: #fff !important; }
 
 .nav-links a:not(.btn)::after {
   content: '';
@@ -306,10 +306,12 @@ body.page-home .navbar:not(.scrolled) .mobile-toggle { color: #fff; }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
   min-width: 100%;
   min-height: 100%;
+  max-width: none;
+  max-height: none;
   border: 0;
   display: block;
 }
