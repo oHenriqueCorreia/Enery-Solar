@@ -75,3 +75,38 @@ const animateStats = () => {
 };
 
 window.addEventListener('load', animateStats);
+
+/* Ajusta o iframe do hero para sempre cobrir toda a seção (comportamento cover) */
+function fitHeroVideo() {
+  const wrapper = document.querySelector('.hero-video-embed');
+  const iframe = wrapper ? wrapper.querySelector('iframe') : null;
+  const hero = document.querySelector('.hero');
+  if (!wrapper || !iframe || !hero) return;
+
+  const rect = hero.getBoundingClientRect();
+  const containerW = rect.width;
+  const containerH = rect.height;
+  const videoAR = 16 / 9;
+
+  // Calcular dimensões para cobrir completamente o container
+  const neededWidth = Math.max(containerW, containerH * videoAR);
+  const neededHeight = Math.max(containerH, containerW / videoAR);
+
+  iframe.style.width = `${Math.ceil(neededWidth)}px`;
+  iframe.style.height = `${Math.ceil(neededHeight)}px`;
+  iframe.style.position = 'absolute';
+  iframe.style.top = '50%';
+  iframe.style.left = '50%';
+  iframe.style.transform = 'translate(-50%, -50%)';
+
+  // Marcar full-hd quando a viewport permitir
+  if (window.innerWidth >= 1920 || window.innerHeight >= 1080) {
+    wrapper.classList.add('full-hd');
+  } else {
+    wrapper.classList.remove('full-hd');
+  }
+}
+
+window.addEventListener('load', fitHeroVideo);
+window.addEventListener('resize', fitHeroVideo);
+window.addEventListener('orientationchange', fitHeroVideo);

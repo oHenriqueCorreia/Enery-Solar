@@ -286,8 +286,38 @@ body.page-home .navbar:not(.scrolled) .mobile-toggle { color: #000; }
 
 /* Hero: vídeo embed do YouTube por trás do overlay */
 .hero { position: relative; overflow: hidden; }
-.hero-video-embed { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; pointer-events: none; }
-.hero-video-embed iframe { width: 100%; height: 100%; border: 0; }
+.hero-video-embed {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #000;
+}
+.hero-video-embed iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Garantir cobertura total do container (comportamento cover) */
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  border: 0;
+  display: block;
+}
+
+/* Limitar para Full HD quando possível, sem criar letterbox */
+.hero-video-embed.full-hd iframe {
+  max-width: 1920px;
+  max-height: 1080px;
+}
 .hero-bg-overlay { position: absolute; inset: 0; z-index: 1; }
 .hero-container { position: relative; z-index: 3; }
 
@@ -1026,4 +1056,33 @@ body.page-home .navbar:not(.scrolled) .mobile-toggle { color: #000; }
   .solutions-grid { grid-template-columns: 1fr; }
   .calc-container { padding: 1.5rem; }
   .social-icons { justify-content: center; }
+}
+
+/* Correções específicas para rodapé no mobile */
+@media (max-width: 600px) {
+  .footer {
+    padding: calc(var(--spacing-md) * 1.5) 0 var(--spacing-md) 0;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    text-align: center;
+    align-items: center;
+  }
+  .footer-brand,
+  .footer-links,
+  .footer-contact {
+    justify-self: center;
+    text-align: center;
+  }
+  .footer-links ul,
+  .footer-contact ul {
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+  }
+  .footer-links ul li a { display: inline-block; padding: 6px 0; }
+  .footer .logo img { margin: 0 auto 0.75rem auto; max-width: 140px; }
+  .social-icons { justify-content: center; margin-top: 0.75rem; }
+  .footer-bottom { text-align: center; padding-top: var(--spacing-md); }
 }
