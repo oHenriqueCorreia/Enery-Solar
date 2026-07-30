@@ -26,3 +26,4 @@ dist-ssr
 # Arquivos Brutos e Pesados
 imagens/
 LOGOS E MODELOS/
+.vercel
