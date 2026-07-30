@@ -302,7 +302,7 @@ section { padding: var(--spacing-lg) 0; }
 }
 
 .credibility-image-wrapper { border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-subtle); }
-.credibility-image { width: 100%; height: 400px; object-fit: cover; }
+.credibility-image { width: 100%; height: auto; display: block; }
 
 /* --- Video Institucional --- */
 .video-institucional { padding: var(--spacing-lg) 0; }
