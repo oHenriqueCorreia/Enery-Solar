@@ -3,3 +3,9 @@ dist/
 .git/
 .env
 .env.*
+TODO.md
+README.md
+.gitignore
+.htaccess
+public/
+*.log

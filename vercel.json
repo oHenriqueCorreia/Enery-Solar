@@ -1,12 +1,37 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.(css|js|svg|png|jpg|jpeg|webp|ico))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.html)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ],
   "routes": [
-    { "src": "^/$", "dest": "/index.html" },
-    { "src": "^/sobre/?$", "dest": "/sobre.html" },
-    { "src": "^/solucoes/?$", "dest": "/solucoes.html" },
-    { "src": "^/projetos/?$", "dest": "/projetos.html" },
-    { "src": "^/contato/?$", "dest": "/contato.html" },
-    { "src": "^/(.+)$", "dest": "/$1" }
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/404.html", "status": 404 }
   ]
 }
