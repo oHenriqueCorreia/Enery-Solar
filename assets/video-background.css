@@ -1,0 +1,73 @@
+.hero {
+  padding: 0 !important;
+  min-height: 100vh !important;
+  height: 100vh;
+  background: #000 url("https://img.youtube.com/vi/qSIq8vPbIFw/maxresdefault.jpg") center / cover no-repeat;
+  isolation: isolate;
+}
+
+.hero .hero-container {
+  min-height: 100vh !important;
+  padding-top: var(--nav-height);
+}
+
+.hero-bg-video {
+  border: 0 !important;
+  height: max(100vh, 56.25vw) !important;
+  left: 50% !important;
+  min-height: 100vh !important;
+  min-width: 100vw !important;
+  object-fit: cover;
+  pointer-events: none !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) scale(1.14);
+  transform-origin: center;
+  width: max(100vw, 177.78vh) !important;
+  z-index: 0 !important;
+}
+
+.hero-bg-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.28) 0%,
+    rgba(0, 0, 0, 0.2) 54%,
+    rgba(18, 18, 18, 0.72) 100%
+  ) !important;
+}
+
+@supports (height: 100svh) {
+  .hero {
+    min-height: 100svh !important;
+    height: 100svh;
+  }
+
+  .hero .hero-container {
+    min-height: 100svh !important;
+  }
+
+  .hero-bg-video {
+    height: max(100svh, 56.25vw) !important;
+    min-height: 100svh !important;
+    width: max(100vw, 177.78svh) !important;
+  }
+}
+
+@media (width <= 768px) {
+  .hero {
+    background-image: url("https://i.ytimg.com/vi/qSIq8vPbIFw/maxresdefault.jpg");
+  }
+
+  .hero-bg-video {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+
+  .hero-bg-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.34) 0%,
+      rgba(0, 0, 0, 0.24) 58%,
+      rgba(18, 18, 18, 0.78) 100%
+    ) !important;
+  }
+}

@@ -32,12 +32,13 @@ const nfInt = (v) => Number(v).toLocaleString('pt-BR', { maximumFractionDigits: 
 const nfFixed = (v, digits = 1) => Number(v).toLocaleString('pt-BR', { minimumFractionDigits: digits, maximumFractionDigits: digits });
 
 const updateCalculator = (value) => {
-  const monthly = Math.round(value * 0.95);
+  const rawMonthly = value * 0.95;
+  const monthly = Math.round(rawMonthly / 50) * 50;
   const yearly = monthly * 12;
   const payback = value > 10000 ? 3.5 : 4.2;
   const twenty = yearly * 20;
 
-  // Formatação consistente: inteiros sem casas, payback com 1 casa
+  // Formatacao consistente: inteiros sem casas, payback com 1 casa
   billValue.textContent = nfInt(value);
   monthlySavings.textContent = nfInt(monthly);
   paybackYears.textContent = nfFixed(payback, 1);
@@ -76,7 +77,7 @@ const animateStats = () => {
 
 window.addEventListener('load', animateStats);
 
-/* Ajusta o iframe do hero para sempre cobrir toda a seção (comportamento cover) */
+/* Ajusta o iframe do hero para sempre cobrir toda a secao (comportamento cover) */
 function fitHeroVideo() {
   const wrapper = document.querySelector('.hero-video-embed');
   const iframe = wrapper ? wrapper.querySelector('iframe') : null;
@@ -88,7 +89,7 @@ function fitHeroVideo() {
   const containerH = rect.height;
   const videoAR = 16 / 9;
 
-  // Calcular dimensões para cobrir completamente o container
+  // Calcular dimensoes para cobrir completamente o container
   const neededWidth = Math.max(containerW, containerH * videoAR);
   const neededHeight = Math.max(containerH, containerW / videoAR);
 

@@ -1,10 +1,12 @@
 {
-  "version": 3,
-  "builds": [
-    { "src": "**/*", "use": "@vercel/static" }
-  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
   "routes": [
     { "src": "^/$", "dest": "/index.html" },
-    { "src": "^/([^/.]+)/?$", "dest": "/$1.html" }
+    { "src": "^/sobre/?$", "dest": "/sobre.html" },
+    { "src": "^/solucoes/?$", "dest": "/solucoes.html" },
+    { "src": "^/projetos/?$", "dest": "/projetos.html" },
+    { "src": "^/contato/?$", "dest": "/contato.html" },
+    { "src": "^/(.+)$", "dest": "/$1" }
   ]
 }

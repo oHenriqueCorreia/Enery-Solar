@@ -35,23 +35,54 @@
         </div>
         <div class="contato-grid">
           <div class="contato-info">
-            <h2>Informações de Contato</h2>
-            <p>Precisando de suporte técnico, orçamento ou estudo de viabilidade? Nossa equipe está à disposição para atender empresas de SC e RS.</p>
+            <h2 style="color: var(--color-text-main); font-size: 1.6rem; margin-bottom: 1rem;">Informações de Contato</h2>
+            <p style="color: var(--color-text-muted); margin-bottom: 2rem; line-height: 1.7;">Precisando de suporte técnico, orçamento ou estudo de viabilidade? Nossa equipe está à disposição para atender empresas de SC e RS.</p>
             <div class="contato-list">
-              <div class="contato-item"><div class="contato-icon">📍</div><div><h4>Sede Administrativa</h4><p>Ermo, Santa Catarina - Brasil<br>Atendemos todo SC e RS</p></div></div>
-              <div class="contato-item"><div class="contato-icon">📞</div><div><h4>Telefone</h4><p>48 99963-2201</p></div></div>
-              <div class="contato-item"><div class="contato-icon">✉️</div><div><h4>E-mail Comercial</h4><p>contato@solarenergy.com.br</p></div></div>
+              <div class="contato-item">
+                <div class="contato-icon">📍</div>
+                <div>
+                  <h4 style="color: var(--color-text-main);">Sede Administrativa</h4>
+                  <p style="color: var(--color-text-muted);">Ermo, Santa Catarina - Brasil<br>Atendemos todo SC e RS</p>
+                </div>
+              </div>
+              <div class="contato-item">
+                <div class="contato-icon">📞</div>
+                <div>
+                  <h4 style="color: var(--color-text-main);">Telefone / WhatsApp</h4>
+                  <p style="color: var(--color-text-muted);">48 99963-2201</p>
+                </div>
+              </div>
+              <div class="contato-item">
+                <div class="contato-icon">✉️</div>
+                <div>
+                  <h4 style="color: var(--color-text-main);">E-mail Comercial</h4>
+                  <p style="color: var(--color-text-muted);">contato@solarenergy.com.br</p>
+                </div>
+              </div>
             </div>
           </div>
-          <form class="contato-form-container">
-            <div class="form-group"><label>Nome ou Empresa</label><input type="text" class="form-control"></div>
-            <div class="form-group"><label>E-mail</label><input type="email" class="form-control"></div>
-            <div class="form-group"><label>Mensagem (Demanda)</label><textarea rows="4" class="form-control"></textarea></div>
-            <button type="button" class="btn btn-primary">SOLICITAR ORÇAMENTO</button>
+          <form class="contato-form-container" action="mailto:contato@solarenergy.com.br" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label for="nome">Nome ou Empresa</label>
+              <input type="text" id="nome" name="nome" class="form-control" placeholder="Ex: Empresa XYZ Ltda">
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="seu@email.com.br">
+            </div>
+            <div class="form-group">
+              <label for="telefone">Telefone / WhatsApp</label>
+              <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="(48) 99999-0000">
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem / Demanda</label>
+              <textarea id="mensagem" name="mensagem" rows="4" class="form-control" placeholder="Descreva brevemente sua necessidade energética, tipo de imóvel e consumo atual..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">SOLICITAR ORÇAMENTO</button>
           </form>
         </div>
       </div>
-      <a href="contato.html" class="whatsapp-float" aria-label="WhatsApp">💬</a>
+      <a href="https://wa.me/5548999632201" class="whatsapp-float" aria-label="WhatsApp" target="_blank" rel="noopener">💬</a>
     </section>
   </main>
 
@@ -61,7 +92,7 @@
         <a href="index.html" class="logo"><img src="assets/logo-branca.png" alt="Solar Energy"></a>
         <p class="footer-desc">Engenharia energética inteligente para quem busca independência, eficiência e crescimento sustentável.</p>
         <div class="social-icons" style="margin-top: 2.5rem; display: flex; gap: 10px;">
-          <a href="#" style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; background:rgba(255,255,255,0.05); border-radius:50%; text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path></svg></a>
+          <a href="#" class="highlight-insta" style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; background:rgba(255,255,255,0.05); border-radius:50%; text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path></svg></a>
           <a href="#" style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; background:rgba(255,255,255,0.05); border-radius:50%; text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path></svg></a>
           <a href="#" style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; background:rgba(255,255,255,0.05); border-radius:50%; text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path></svg></a>
         </div>
