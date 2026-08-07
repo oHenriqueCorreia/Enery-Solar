@@ -3,63 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Página não encontrada | SolarEnergy</title>
+  <title>SolarEnergy | Página não encontrada</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    .error-page {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, var(--color-primary) 0%, #0a0a0a 100%);
-      padding: 2rem;
-      text-align: center;
-    }
-    .error-content { max-width: 600px; color: #fff; }
-    .error-code {
-      font-size: clamp(5rem, 18vw, 10rem);
-      font-weight: 900;
-      line-height: 1;
-      color: var(--color-accent);
-      text-shadow: 0 4px 30px rgba(244, 193, 58, 0.3);
-      margin-bottom: 1rem;
-    }
-    .error-title {
-      font-size: clamp(1.5rem, 4vw, 2.2rem);
-      color: #fff;
-      margin-bottom: 1rem;
-    }
-    .error-text {
-      color: rgba(255,255,255,0.7);
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-    }
-    .error-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn-secondary {
-      background-color: transparent;
-      color: #fff;
-      border: 2px solid rgba(255,255,255,0.25);
-    }
-    .btn-secondary:hover {
-      background-color: rgba(255,255,255,0.08);
-      border-color: #fff;
-      transform: translateY(-2px);
-    }
-  </style>
 </head>
 <body>
-  <section class="error-page">
-    <div class="error-content">
-      <div class="error-code">404</div>
-      <h1 class="error-title">Página não encontrada</h1>
-      <p class="error-text">A página que você procura pode ter sido removida, renomeada ou está temporariamente indisponível. Retorne à página inicial ou entre em contato com nossa equipe.</p>
-      <div class="error-actions">
-        <a href="index.html" class="btn btn-primary">Voltar para Home</a>
-        <a href="contato.html" class="btn btn-secondary">Falar com a SolarEnergy</a>
-      </div>
+  <header class="navbar" id="site-navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo-branca.png" alt="Solar Energy" />
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="sobre.html">Sobre a Empresa</a>
+        <a href="solucoes.html">Soluções</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="contato.html">Contato</a>
+        <a href="contato.html" class="btn btn-primary nav-cta">Orçamento</a>
+      </nav>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menu">☰</button>
     </div>
-  </section>
+  </header>
+
+  <main>
+    <section class="bg-card" style="min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 120px 0 4rem;">
+      <div class="container text-center">
+        <div style="font-size: 8rem; font-weight: 900; color: var(--color-primary); line-height: 1; font-family: var(--font-heading); margin-bottom: 1rem;">404</div>
+        <h1 class="section-title" style="margin-bottom: 1rem;">Página não encontrada</h1>
+        <p class="section-description mx-auto" style="max-width: 500px; margin-bottom: 2rem;">
+          A página que você procura pode ter sido movida ou não existe mais. Vamos voltar ao início?
+        </p>
+        <a href="index.html" class="btn btn-primary">Voltar para Home</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="assets/logo-branca.png" alt="Solar Energy"></a>
+        <p class="footer-desc">Projetos personalizados para transformar a forma como residências, empresas e o agronegócio consomem energia. Acompanhe nossos projetos e novidades no Instagram.</p>
+        <div class="social-icons" style="margin-top: 2.5rem; display: flex; gap: 10px;">
+          <a href="#" class="highlight-insta" style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; background:rgba(255,255,255,0.05); border-radius:50%; text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path></svg></a>
+          <a href="#" style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; background:rgba(255,255,255,0.05); border-radius:50%; text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path></svg></a>
+          <a href="#" style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; background:rgba(255,255,255,0.05); border-radius:50%; text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path></svg></a>
+        </div>
+      </div>
+      <div class="footer-links"><h4 class="footer-title">Navegação</h4><ul><li><a href="index.html">Home</a></li><li><a href="sobre.html">Sobre a Empresa</a></li><li><a href="solucoes.html">Soluções</a></li><li><a href="projetos.html">Portfólio</a></li></ul></div>
+      <div class="footer-links"><h4 class="footer-title">Soluções</h4><ul><li><a href="solucoes.html">Energia Solar</a></li><li><a href="solucoes.html">Agronegócio</a></li><li><a href="solucoes.html">Mobilidade Elétrica</a></li><li><a href="solucoes.html">Armazenamento</a></li></ul></div>
+      <div class="footer-contact"><h4 class="footer-title">Contato</h4><ul><li>📍 Ermo, Santa Catarina - Brasil<br><strong>Atuação SC e RS</strong></li><li>📞 48 99963-2201</li><li>✉️ contato@solarenergy.com.br</li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 SolarEnergy Engenharia. Todos os direitos reservados.</p></div>
+  </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
+
