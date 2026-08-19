@@ -53,16 +53,20 @@ if (billRange) {
 }
 
 const statNumbers = document.querySelectorAll('.stat-number');
-const stats = Array.from(statNumbers).map((el, index) => ({
-  el,
-  target: index === 0 ? 780 : 2018,
-  suffix: index === 0 ? '+' : ''
-}));
+const stats = Array.from(statNumbers).map((el) => {
+  const target = parseInt(el.getAttribute('data-value'), 10) || 0;
+  const suffix = el.textContent.includes('+') ? '+' : '';
+  return {
+    el,
+    target,
+    suffix
+  };
+});
 
 const animateStats = () => {
-  stats.forEach((stat, index) => {
-    let start = index === 1 ? 2000 : 0;
-    const increment = Math.ceil((stat.target - start) / 60);
+  stats.forEach((stat) => {
+    let start = 0;
+    const increment = Math.max(1, Math.ceil(stat.target / 40));
     const interval = setInterval(() => {
       start += increment;
       if (start >= stat.target) {
@@ -71,7 +75,7 @@ const animateStats = () => {
       } else {
         stat.el.textContent = `${start}${stat.suffix}`;
       }
-    }, 33);
+    }, 35);
   });
 };
 
