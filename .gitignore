@@ -27,3 +27,6 @@ dist-ssr
 imagens/
 LOGOS E MODELOS/
 .vercel
+
+# Pacotes locais de publicacao
+/release/

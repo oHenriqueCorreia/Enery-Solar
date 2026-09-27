@@ -1,16 +1,26 @@
-# React + Vite
+# SolarEnergy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site institucional estático da SolarEnergy, preparado para Apache/cPanel no plano P da HostGator.
 
-Currently, two official plugins are available:
+O conteúdo, o layout e o comportamento visual continuam nos arquivos HTML, CSS e JavaScript da raiz. Não existe etapa de compilação nem dependência de Node.js no servidor.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Publicação na HostGator
 
-## React Compiler
+Use o arquivo `release/solarenergy-hostgator.zip`, gerado pelo comando:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```powershell
+powershell -ExecutionPolicy Bypass -File .\tools\build-hostgator.ps1
+```
 
-## Expanding the ESLint configuration
+No cPanel, abra **Gerenciador de Arquivos > public_html**, envie o ZIP e extraia-o ali. Depois confirme que `index.html` e `.htaccess` estão diretamente dentro de `public_html`, e não dentro de outra pasta.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+As instruções completas e a verificação pós-publicação estão em [HOSTGATOR.md](HOSTGATOR.md).
+
+## Arquivos publicados
+
+- `index.html`, `sobre.html`, `solucoes.html`, `contato.html` e `404.html`
+- `styles.css`, `scripts.js` e `favicon.svg`
+- `.htaccess` para Apache/cPanel
+- somente as imagens efetivamente usadas, dentro de `assets/`
+
+Pastas e arquivos legados da Vercel foram preservados no repositório para não apagar material existente, mas não entram no pacote da HostGator.
