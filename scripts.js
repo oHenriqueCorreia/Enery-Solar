@@ -2,25 +2,25 @@ const mobileToggle = document.getElementById('mobile-toggle');
 const navLinks = document.getElementById('nav-links');
 const navbar = document.getElementById('site-navbar');
 
-if (mobileToggle) {
+if (mobileToggle && navLinks) {
   mobileToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
   });
+
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
 }
 
-navLinks.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-  });
-});
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-});
+if (navbar) {
+  const updateNavbar = () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  };
+  updateNavbar();
+  window.addEventListener('scroll', updateNavbar, { passive: true });
+}
 
 const billRange = document.getElementById('billRange');
 const billValue = document.getElementById('billValue');
@@ -52,66 +52,68 @@ if (billRange) {
   });
 }
 
-const statNumbers = document.querySelectorAll('.stat-number');
-const stats = Array.from(statNumbers).map((el) => {
-  const target = parseInt(el.getAttribute('data-value'), 10) || 0;
-  const suffix = el.textContent.includes('+') ? '+' : '';
-  return {
-    el,
-    target,
-    suffix
-  };
+const stats = Array.from(document.querySelectorAll('.stat-number')).map((el) => ({
+  el,
+  target: parseInt(el.getAttribute('data-value'), 10) || 0,
+  suffix: el.textContent.includes('+') ? '+' : ''
+}));
+
+stats.forEach((stat) => {
+  let start = 0;
+  const increment = Math.max(1, Math.ceil(stat.target / 40));
+  const interval = setInterval(() => {
+    start += increment;
+    if (start >= stat.target) {
+      stat.el.textContent = `${stat.target}${stat.suffix}`;
+      clearInterval(interval);
+    } else {
+      stat.el.textContent = `${start}${stat.suffix}`;
+    }
+  }, 35);
 });
 
-const animateStats = () => {
-  stats.forEach((stat) => {
-    let start = 0;
-    const increment = Math.max(1, Math.ceil(stat.target / 40));
-    const interval = setInterval(() => {
-      start += increment;
-      if (start >= stat.target) {
-        stat.el.textContent = `${stat.target}${stat.suffix}`;
-        clearInterval(interval);
-      } else {
-        stat.el.textContent = `${start}${stat.suffix}`;
-      }
-    }, 35);
-  });
-};
-
-window.addEventListener('load', animateStats);
-
 /* Ajusta o iframe do hero para sempre cobrir toda a secao (comportamento cover) */
-function fitHeroVideo() {
-  const wrapper = document.querySelector('.hero-video-embed');
-  const iframe = wrapper ? wrapper.querySelector('iframe') : null;
-  const hero = document.querySelector('.hero');
-  if (!wrapper || !iframe || !hero) return;
+const hero = document.querySelector('.hero');
+const heroIframe = document.querySelector('.hero-video-embed iframe');
 
-  const rect = hero.getBoundingClientRect();
-  const containerW = rect.width;
-  const containerH = rect.height;
+if (hero && heroIframe) {
   const videoAR = 16 / 9;
+  let frame = 0;
 
-  // Calcular dimensoes para cobrir completamente o container
-  const neededWidth = Math.max(containerW, containerH * videoAR);
-  const neededHeight = Math.max(containerH, containerW / videoAR);
+  const fitHeroVideo = () => {
+    frame = 0;
+    const { width, height } = hero.getBoundingClientRect();
+    heroIframe.style.width = `${Math.ceil(Math.max(width, height * videoAR))}px`;
+    heroIframe.style.height = `${Math.ceil(Math.max(height, width / videoAR))}px`;
+  };
 
-  iframe.style.width = `${Math.ceil(neededWidth)}px`;
-  iframe.style.height = `${Math.ceil(neededHeight)}px`;
-  iframe.style.position = 'absolute';
-  iframe.style.top = '50%';
-  iframe.style.left = '50%';
-  iframe.style.transform = 'translate(-50%, -50%)';
+  const scheduleFit = () => {
+    if (!frame) frame = requestAnimationFrame(fitHeroVideo);
+  };
 
-  // Marcar full-hd quando a viewport permitir
-  if (window.innerWidth >= 1920 || window.innerHeight >= 1080) {
-    wrapper.classList.add('full-hd');
-  } else {
-    wrapper.classList.remove('full-hd');
-  }
+  fitHeroVideo();
+  window.addEventListener('resize', scheduleFit, { passive: true });
+  window.addEventListener('orientationchange', scheduleFit);
+
+  /* Mantem a capa visivel ate o YouTube avisar que o video esta tocando */
+  const heroEmbed = heroIframe.parentElement;
+  const showVideo = () => heroEmbed.classList.add('is-playing');
+  const fallback = setTimeout(showVideo, 4000);
+
+  window.addEventListener('message', (event) => {
+    if (event.source !== heroIframe.contentWindow) return;
+    try {
+      const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+      if (data && data.info && data.info.playerState === 1) {
+        clearTimeout(fallback);
+        showVideo();
+      }
+    } catch (e) { /* mensagem que nao e do player */ }
+  });
+
+  const listenToPlayer = () => {
+    heroIframe.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: 'hero', channel: 'widget' }), '*');
+  };
+  listenToPlayer();
+  heroIframe.addEventListener('load', listenToPlayer);
 }
-
-window.addEventListener('load', fitHeroVideo);
-window.addEventListener('resize', fitHeroVideo);
-window.addEventListener('orientationchange', fitHeroVideo);

@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SolarEnergy | Energia que Impulsiona Negócios</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://www.youtube.com" />
+  <link rel="preconnect" href="https://i.ytimg.com" />
+  <link rel="preload" as="image" href="assets/hero-poster.webp" type="image/webp" />
+  <link rel="stylesheet" href="styles.css?v=20261029" />
 </head>
 <body class="page-home">
   <header class="navbar" id="site-navbar">
     <div class="container navbar-container">
       <a href="index.html" class="logo">
-        <img src="assets/logo-branca.png" alt="Solar Energy" />
+        <img src="assets/logo-branca.webp" alt="Solar Energy" width="202" height="48" />
       </a>
       <nav class="nav-links" id="nav-links">
         <a href="index.html" class="active">Home</a>
@@ -28,7 +31,7 @@
   <main>
     <section class="hero" id="home">
   <div class="hero-video-embed" aria-hidden="true">
-    <iframe src="https://www.youtube.com/embed/qSIq8vPbIFw?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=qSIq8vPbIFw&modestbranding=1&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/qSIq8vPbIFw?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=qSIq8vPbIFw&modestbranding=1&playsinline=1&enablejsapi=1" title="Vídeo de fundo SolarEnergy" tabindex="-1" frameborder="0" allow="autoplay; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>
   </div>
   <div class="hero-bg-overlay"></div>
   <div class="hero-bottom-shadow"></div>
@@ -39,12 +42,6 @@
     </div>
   </div>
 </section>
-<style>
-  .home-trajetoria-grid { display: grid; grid-template-columns: 1fr 1.1fr; align-items: center; gap: 4rem; }
-  @media (max-width: 900px) {
-    .home-trajetoria-grid { display: flex; flex-direction: column-reverse; gap: 2.5rem; }
-  }
-</style>
     <section class="credibility bg-card" style="padding: var(--spacing-lg) 0;">
       <div class="container">
         <div class="home-trajetoria-grid">
@@ -53,18 +50,18 @@
             <h2 class="section-title">Energia que transforma o seu negócio</h2>
             <p class="section-description" style="margin-bottom: 2rem;">780+ projetos executados. Desde 2018, ajudando empresas, produtores rurais e famílias a consumir energia de forma mais inteligente.</p>
             <div class="credibility-stats" style="display: flex; flex-direction: row; flex-wrap: nowrap; gap: clamp(0.5rem, 2vw, 1.5rem); justify-content: center; margin-top: 1.5rem;">
-              <div class="stat-item" style="background: var(--color-bg-deep); padding: clamp(0.75rem, 2vw, 1.5rem); border-radius: var(--radius-md); box-shadow: var(--shadow-subtle); border-left: 4px solid var(--color-secondary); transition: transform 0.3s; cursor: default; flex: 1; width: 50%;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='none'">
+              <div class="stat-item" style="background: var(--color-bg-deep); padding: clamp(0.75rem, 2vw, 1.5rem); border-radius: var(--radius-md); box-shadow: var(--shadow-subtle); border-left: 4px solid var(--color-secondary); transition: transform 0.3s; cursor: default; flex: 1; width: 50%;">
                 <h2 class="stat-number" data-value="780" style="font-size: clamp(1.8rem, 5vw, 2.5rem); color: var(--color-primary); margin-bottom: 0.2rem;">0+</h2>
                 <p class="stat-label" style="font-size: clamp(0.65rem, 1.5vw, 0.9rem); font-weight: 700; text-transform: uppercase; letter-spacing: 0px;">Projetos Executados</p>
               </div>
-              <div class="stat-item" style="background: var(--color-bg-deep); padding: clamp(0.75rem, 2vw, 1.5rem); border-radius: var(--radius-md); box-shadow: var(--shadow-subtle); border-left: 4px solid var(--color-primary); transition: transform 0.3s; cursor: default; flex: 1; width: 50%;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='none'">
+              <div class="stat-item" style="background: var(--color-bg-deep); padding: clamp(0.75rem, 2vw, 1.5rem); border-radius: var(--radius-md); box-shadow: var(--shadow-subtle); border-left: 4px solid var(--color-primary); transition: transform 0.3s; cursor: default; flex: 1; width: 50%;">
                 <h2 class="stat-number" data-value="8" style="font-size: clamp(1.8rem, 5vw, 2.5rem); color: var(--color-primary); margin-bottom: 0.2rem;">0+</h2>
                 <p class="stat-label" style="font-size: clamp(0.65rem, 1.5vw, 0.9rem); font-weight: 700; text-transform: uppercase; letter-spacing: 0px;">Anos de Experiência</p>
               </div>
             </div>
           </div>
           <div class="credibility-image-wrapper" style="max-width: 600px; margin: 0 auto;">
-            <img src="assets/nossa-trajetoria.png" alt="Nossa Trajetória" class="credibility-image" style="width: 100%; height: auto; object-fit: contain; border-radius: var(--radius-lg); box-shadow: var(--shadow-subtle); display: block;" />
+            <img src="assets/nossa-trajetoria.webp" srcset="assets/nossa-trajetoria-640.webp 640w, assets/nossa-trajetoria.webp 1200w" sizes="(max-width: 640px) 100vw, 600px" width="1200" height="800" loading="lazy" decoding="async" alt="Nossa Trajetória" class="credibility-image" style="width: 100%; height: auto; object-fit: contain; border-radius: var(--radius-lg); box-shadow: var(--shadow-subtle); display: block;" />
           </div>
         </div>
       </div>
@@ -78,7 +75,7 @@
           <p class="section-description mx-auto" style="max-width: 700px;">Um olhar sobre a nossa estrutura técnica, inovação e a tecnologia de ponta que utilizamos para transformar a energia do sol em resultados reais e tangíveis.</p>
         </div>
         <div id="video-institucional-wrapper" class="video-wrapper mx-auto mt-md" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-md); box-shadow: var(--shadow-subtle); max-width: 100%; background: #000; margin: 0 auto;">
-          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/QQ1a2Wadqgo?autoplay=1&mute=1&loop=1&playlist=QQ1a2Wadqgo&rel=0&modestbranding=1&controls=1" title="Por dentro da SolarEnergy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/QQ1a2Wadqgo?autoplay=1&mute=1&loop=1&playlist=QQ1a2Wadqgo&rel=0&modestbranding=1&controls=1&playsinline=1" title="Por dentro da SolarEnergy" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </section>
@@ -171,7 +168,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="logo"><img src="assets/logo-branca.png" alt="Solar Energy"></a>
+        <a href="index.html" class="logo"><img src="assets/logo-branca.webp" alt="Solar Energy" width="202" height="48" loading="lazy" decoding="async"></a>
         <div class="social-container" style="margin-top: 1.5rem;">
           <p class="footer-desc" style="margin-bottom: 1.5rem;">Projetos personalizados para transformar a forma como residências, empresas e o agronegócio consomem energia.</p>
           <div class="social-icons" style="display: flex; gap: 15px; align-items: center;">
@@ -187,7 +184,7 @@
     <div class="footer-bottom"><p>© 2026 SolarEnergy Engenharia. Todos os direitos reservados.</p></div>
   </footer>
 
-  <script src="scripts.js"></script>
+  <script src="scripts.js?v=20261029" defer></script>
 </body>
 </html>
 

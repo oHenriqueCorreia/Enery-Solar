@@ -21,6 +21,8 @@ As instruções completas e a verificação pós-publicação estão em [HOSTGAT
 - `index.html`, `sobre.html`, `solucoes.html`, `contato.html` e `404.html`
 - `styles.css`, `scripts.js` e `favicon.svg`
 - `.htaccess` para Apache/cPanel
-- somente as imagens efetivamente usadas, dentro de `assets/`
+- somente as imagens efetivamente usadas, em WebP otimizado, dentro de `assets/`
 
-Pastas e arquivos legados da Vercel foram preservados no repositório para não apagar material existente, mas não entram no pacote da HostGator.
+O build também carimba `?v=<hash>` em `styles.css` e `scripts.js` nos HTMLs, para que os visitantes recebam a versão nova logo após cada publicação.
+
+Imagens e bundles antigos que não eram usados por nenhuma página foram removidos (continuam disponíveis no histórico do git).

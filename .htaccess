@@ -8,20 +8,27 @@ Options -Indexes
 # Exibe a pagina personalizada e mantem o status HTTP 404 correto.
 ErrorDocument 404 /404.html
 
+# Garante o tipo correto das imagens WebP e do favicon SVG.
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType image/svg+xml .svg
+  AddCharset UTF-8 .html .css .js
+</IfModule>
+
 # Compactacao dos arquivos de texto, quando o modulo estiver disponivel.
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript
-  AddOutputFilterByType DEFLATE application/javascript application/json image/svg+xml
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json image/svg+xml
 </IfModule>
 
-# Cache de navegador. HTML sempre revalida; imagens podem ficar em cache.
+# Cache de navegador. HTML sempre revalida; CSS/JS usam ?v= no HTML para atualizar.
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresDefault "access plus 1 hour"
   ExpiresByType text/html "access plus 0 seconds"
-  ExpiresByType text/css "access plus 7 days"
-  ExpiresByType application/javascript "access plus 7 days"
-  ExpiresByType text/javascript "access plus 7 days"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 30 days"
   ExpiresByType image/png "access plus 1 year"
   ExpiresByType image/jpeg "access plus 1 year"
@@ -32,9 +39,10 @@ ErrorDocument 404 /404.html
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
+  # Os videos do YouTube exigem que a origem do site seja enviada.
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
 
   <FilesMatch "\.(?:html?)$">
-    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Cache-Control "no-cache, must-revalidate"
   </FilesMatch>
 </IfModule>
